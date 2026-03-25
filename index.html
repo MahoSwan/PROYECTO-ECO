@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasifi-Eco</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Chart.js para gráficos en tiempo real (EJEMPLO: CAMBIAR CUANDO SE TENGAN NUESTROS DATOS) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="brand">Clasifi-Eco</div>
+        <div style="display: flex; flex-direction: column; width: 100%;">
+            <button class="nav-btn active" onclick="switchView('dashboard')">
+                <span>📊</span> Dashboard
+            </button>
+            <button class="nav-btn" onclick="switchView('console')">
+                <span>⌨️</span> Consola
+            </button>
+            <button class="nav-btn" onclick="switchView('statistics')">
+                <span>📈</span> Estadísticas
+            </button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        
+        <header>
+            <h2 id="page-title">Panel de Control</h2>
+            <div class="status-badge" id="global-status">
+                <div class="status-dot"></div>
+                <span class="status-text">Desconectado</span>
+            </div>
+        </header>
+
+        <!-- VISTA DASHBOARD -->
+        <section id="dashboard-view" class="view-section active">
+
+            <div class="camera-panel">
+                <div class="camera-placeholder">[ LIVE CAMERA FEED - SIMULATED ]</div>
+                <div class="detection-result" id="ai-result">Esperando objeto...</div>
+            </div>
+        </section>
+
+        <!-- VISTA CONSOLA -->
+        <section id="console-view" class="view-section">
+            <div class="console-container">
+                <div class="logs-window" id="console-logs">
+                    <div class="log-entry"><span class="log-time">[SYSTEM]</span> Sistema iniciado...</div>
+                </div>
+
+                <div class="controls-area">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="logAction('Comando: MOVER CINTA IZQUIERDA')">
+                            ◀ Izquierda
+                        </button>
+                        <button class="btn btn-primary" onclick="logAction('Comando: MOVER CINTA DERECHA')">
+                            Derecha ▶
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" id="btn-connect" onclick="toggleConnection(true)">
+                            ● Conectar
+                        </button>
+                        <button class="btn btn-danger" id="btn-disconnect" onclick="toggleConnection(false)" disabled>
+                            ■ Desconectar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NUEVA VISTA ESTADÍSTICAS EN TIEMPO REAL -->
+        <section id="statistics-view" class="view-section">
+            <div class="stats-container">
+                <!-- Gráfico de líneas - Clasificaciones por hora -->
+                <div class="chart-card">
+                    <h3 class="chart-title">📈 Clasificaciones por Hora (Últimas 24h)</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="hourlyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de pastel - Distribución por material -->
+                <div class="chart-card">
+                    <h3 class="chart-title">🥧 Distribución por Tipo de Material</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="materialChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de barras - Eficiencia por categoría -->
+                <div class="chart-card full-width">
+                    <h3 class="chart-title">📊 Eficiencia de Clasificación por Categoría</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="efficiencyChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Métricas adicionales en tiempo real -->
+                <div class="realtime-metrics">
+                    <div class="metric-box">
+                        <div class="metric-icon">⚡</div>
+                        <div class="metric-info">
+                            <div class="metric-label">Tasa Actual</div>
+                            <div class="metric-value" id="rate-current">0/min</div>
+                        </div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-icon">🎯</div>
+                        <div class="metric-info">
+                            <div class="metric-label">Precisión IA</div>
+                            <div class="metric-value text-success" id="ai-accuracy">0%</div>
+                        </div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-icon">♻️</div>
+                        <div class="metric-info">
+                            <div class="metric-label">Total Reciclado</div>
+                            <div class="metric-value text-primary" id="total-recycled">0 kg</div>
+                        </div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-info">
+                            <div class="metric-label">Tiempo Activo</div>
+                            <div class="metric-value" id="uptime">00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
