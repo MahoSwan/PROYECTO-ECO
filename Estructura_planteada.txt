@@ -1,0 +1,33 @@
+clasifi-eco/Proyecto
+│
+├── main.py                    # 🚀 Punto de entrada (app principal)
+│
+├── ui(visual)/                # 🖥️ Interfaces (Tkinter)
+│   ├── __init__.py
+│   ├── interfaz.py            # Dashboard
+│   ├── interfaz_consola.py    # Consola control
+│
+├── ia/                        # 🤖 Inteligencia artificial
+│   ├── __init__.py
+│   ├── yolo_detector.py       # Detección con YOLO
+│   ├── modelo_residuos.h5     # (si usas clasificación)
+│
+├── hardware/                  # 🔌 Comunicación con Arduino
+│   ├── __init__.py
+│   ├── bluetooth.py           # conexión serial
+│
+├── utils/                     # 🧰 Funciones auxiliares
+│   ├── __init__.py
+│   ├── helpers.py
+│
+├── assets/                    #Recursos visuales
+│   ├── iconos/
+│   ├── imagenes/
+│
+├── dataset/                   #Datos de entrenamiento
+│   ├── images/
+│   ├── labels/
+│
+├── runs/                      #Resultados de YOLO (auto)
+│
+└── requirements.txt           #librerías
