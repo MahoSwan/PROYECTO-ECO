@@ -1,4 +1,3 @@
-#Liberias (De esta, las de la IA se llaman a traves de los mains y respectivas carpetas )
 import tkinter as tk
 from tkinter import font as tkfont
 import random
@@ -9,14 +8,14 @@ from matplotlib.figure import Figure
 import matplotlib
 matplotlib.use('TkAgg')
 
-# Completar (falta colores y principal)
+# ... (código existente de COLORS y clase principal) ...
 
 class StatisticsView(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent, bg=COLORS["bg_dark"])
         self.controller = controller
         
-        # Header (MMMMMMM PUAJ)
+        # Header
         header = tk.Frame(self, bg=COLORS["bg_dark"], height=60)
         header.pack(fill="x", padx=20, pady=10)
         tk.Label(header, text="Estadísticas en Tiempo Real", bg=COLORS["bg_dark"], 
