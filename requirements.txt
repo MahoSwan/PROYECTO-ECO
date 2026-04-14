@@ -1,0 +1,16 @@
+# ClasifiEco - Dependencias requeridas
+
+# Inteligencia Artificial y visión por computadora
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+pillow>=10.0.0
+tensorflow>=2.13.0
+
+# Comunicación serial con hardware
+pyserial>=3.5
+
+# Interfaz gráfica
+matplotlib>=3.7.0
+
+# Utilidades adicionales
+numpy>=1.24.0
