@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clasifi-Eco</title>
+    <title>Clasifi-Eco - Sistema Integral</title>
+    <!-- Enlace a hoja de estilos -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Chart.js para gráficos en tiempo real (EJEMPLO: CAMBIAR CUANDO SE TENGAN NUESTROS DATOS) -->
+    <!-- Chart.js para gráficos -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
-    <nav class="sidebar">
+    <!-- ==========================================
+         📱 SIDEBAR DE NAVEGACIÓN
+         ========================================== -->
+    <div class="sidebar">
         <div class="brand">Clasifi-Eco</div>
-        <div style="display: flex; flex-direction: column; width: 100%;">
+        <nav>
+            <button class="nav-btn" onclick="switchView('info')">
+                <span>ℹ️</span> Información
+            </button>
             <button class="nav-btn active" onclick="switchView('dashboard')">
                 <span>📊</span> Dashboard
             </button>
@@ -23,119 +28,277 @@
             <button class="nav-btn" onclick="switchView('statistics')">
                 <span>📈</span> Estadísticas
             </button>
-        </div>
-    </nav>
+        </nav>
+    </div>
 
+    <!-- ==========================================
+         📄 CONTENIDO PRINCIPAL
+         ========================================== -->
     <main class="main-content">
-        
+        <!-- Header Común -->
         <header>
-            <h2 id="page-title">Panel de Control</h2>
-            <div class="status-badge" id="global-status">
+            <h2 id="page-title"> Panel de Control</h2>
+            <div id="global-status" class="status-badge">
                 <div class="status-dot"></div>
                 <span class="status-text">Desconectado</span>
             </div>
         </header>
 
-        <!-- VISTA DASHBOARD -->
+        <!-- ==========================================
+             VISTA 1: INFORMACIÓN DEL PROYECTO
+             ========================================== -->
+        <section id="info-view" class="view-section">
+            <div class="info-header">
+                <p class="subtitle">Inteligencia Artificial aplicada a la educación de gestión y clasificación de residuos sólidos</p>
+                <h1 class="main-title">CLASIFI-ECO</h1>
+            </div>
+
+            <div class="content-card">
+                <h2 class="card-title">¿Qué es ClasifiEco?</h2>
+                <p class="card-text">
+                    Un sistema de IA que permite al usuario subir una <strong>imagen</strong> o <strong>descripción</strong> de un residuo para obtener: <strong>Tipo de residuo</strong> Y <strong>instrucciones</strong> de cómo y dónde depositarlo correctamente.
+                </p>
+                <div class="image-placeholder">
+                    <span class="placeholder-text">📷 </span>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2 class="card-title"><span class="icon">🎯</span> Nuestro Objetivo</h2>
+                <p class="card-text">
+                    Un sistema de IA que permite al usuario subir una imagen o descripción de un residuo para obtener: <strong>Tipo de residuo</strong> y <strong>instrucciones</strong> de cómo y dónde depositarlo correctamente.
+                </p>
+    
+            </div>
+
+            <div class="content-card">
+                <h2 class="card-title"><span class="icon">🔍</span> Encontramos...</h2>
+                <div class="split-container">
+                    <div class="problem-box">
+                        <h3>⚠️ Problema</h3>
+                        <ul>
+                            <li>Aproximadamente más de 2000 millones de toneladas de residuos anuales.</li>
+                            <li>Mal manejo por falta de conocimiento.</li>
+                            <li>Contaminación en agua, aire y suelos.</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ Solución</h3>
+                        <p>
+                            Queremos hacer que reciclar sea tan fácil como tomar una foto. Usamos <strong>Inteligencia Artificial</strong> para identificar residuos y decirte exactamente dónde desecharlos. Ayudamos a <strong>reducir errores</strong>, <strong>mejorar hábitos</strong> y <strong>fomentar conciencia ambiental</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ods-section">
+                <h2 class="section-title"> Relación con la ODS12</h2>
+                <div class="ods-nav">
+                    <span class="ods-arrow" onclick="odsSlide(-1)">◀</span>
+                    <p class="ods-text" id="ods-text">
+                        El ODS 12 de la ONU promueve un consumo y producción responsables, enfocándose en reducir el impacto ambiental y social mediante el uso eficiente de recursos, la reducción de residuos y el reciclaje.
+                    </p>
+                    <span class="ods-arrow" onclick="odsSlide(1)">▶</span>
+                </div>
+            </div>
+
+<!-- NUESTRO GRUPO -->
+<div class="team-section">
+    <h2 class="section-title">👥 NUESTRO GRUPO</h2>
+    <p class="section-desc">
+        ¡Hola! Somos un equipo de <strong style="color: var(--text-main);">9 estudiantes</strong> del primer semestre de la Universidad Santiago de Cali, trabajando juntos en este proyecto.
+    </p>
+    <div class="team-grid">
+        <!-- Card 1 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img1.jpg" alt="Integrante 1">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">MARIA JOSE SALINAS</span>
+                <span class="member-credit">SOPORTE</span>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img2.jpg" alt="Integrante 2">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">MELANY MIRANDA BELTRÁN</span>
+                <span class="member-credit">DISEÑO DE UI/UX</span>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img3.jpg" alt="Integrante 3">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">ANDRÉS JULIÁN JIMÉNEZ</span>
+                <span class="member-credit">ENTRENAMIENTO IA</span>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img4.jpg" alt="Integrante 4">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-namSe">JERONIMO ISAAC MARTINEZ</span>
+                <span class="member-credit">FUNCIONES AUXILIARES</span>
+            </div>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img5.jpg" alt="Integrante 5">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">DANNA CAMAYO MORENO</span>
+                <span class="member-credit">DISEÑO UI/UX</span>
+            </div>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img6.jpg" alt="Integrante 6">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">JOHN ALEJANDRO ARANGO</span>
+                <span class="member-credit">CREACIÓN IA</span>
+            </div>
+        </div>
+        
+        <!-- Card 7 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img7.jpg" alt="Integrante 7">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">ALEJANDRO LOMELLIN BEDOYA</span>
+                <span class="member-credit">ENTRENAMIENTO IA</span>
+            </div>
+        </div>
+        
+        <!-- Card 8 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img8.jpg" alt="Integrante 8">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">ERICK TASCÓN PÉREZ</span>
+                <span class="member-credit">CREACIÓN IA</span>
+            </div>
+        </div>
+        
+        <!-- Card 9 -->
+        <div class="team-card">
+            <div class="card-bg">
+                <img src="../assets/image/img9.jpg" alt="Integrante 9">
+            </div>
+            <div class="hover-overlay">
+                <span class="member-name">SALVADOR GÓMEZ LAVAO</span>
+                <span class="member-credit">HARDWARE FISICO</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PROYECCIÓN Y ESCALABILIDAD -->
+<div class="projection-section">
+    <h2 class="section-title"> PROYECCIÓN Y ESCALABILIDAD</h2>
+    <div class="projection-grid">
+        <div class="projection-col">
+            <h4>Proyección</h4>
+            <p>Implementar el sistema en entornos educativos universitarios, permitiendo a estudiantes y profesores clasificar residuos de manera eficiente. Expandir a otras universidades de Colombia como modelo replicable.</p>
+        </div>
+        <div class="projection-col">
+            <h4>Escalabilidad</h4>
+            <p>Integrar sensores IoT para monitoreo en tiempo real, agregar más categorías de materiales, y desarrollar una app móvil complementaria para registro personal de hábitos de reciclaje.</p>
+        </div>
+    </div>
+</div>
+        </section>
+
+        <!-- ==========================================
+             VISTA 2: DASHBOARD
+             ========================================== -->
         <section id="dashboard-view" class="view-section active">
-
+            <div class="metrics-grid">
+                <div class="card">
+                    <span class="card-label">Total Residuos</span>
+                    <div class="card-value" id="metric-count">0</div>
+                </div>
+                <div class="card">
+                    <span class="card-label">Tiempo Promedio</span>
+                    <div class="card-value" id="metric-time">0.0s</div>
+                </div>
+                <div class="card">
+                    <span class="card-label">Precisión IA</span>
+                    <div class="card-value" id="metric-recycle">0%</div>
+                </div>
+                <div class="card">
+                    <span class="card-label">Última Detección</span>
+                    <div class="card-value ai-text" id="ai-result">Esperando objeto...</div>
+                </div>
+            </div>
             <div class="camera-panel">
-                <div class="camera-placeholder">[ LIVE CAMERA FEED - SIMULATED ]</div>
-                <div class="detection-result" id="ai-result">Esperando objeto...</div>
+                <div class="camera-placeholder"></div>
+                <input type="file" id="fileInput">
+                <button onclick="subirImagen()">📸 Analizar</button>
+                
+                <video id="webcam" autoplay playsinline style="display:none"></video>
+                <canvas id="canvas" style="display:none"></canvas>
             </div>
-        </section>
-
-        <!-- VISTA CONSOLA -->
-        <section id="console-view" class="view-section">
-            <div class="console-container">
-                <div class="logs-window" id="console-logs">
-                    <div class="log-entry"><span class="log-time">[SYSTEM]</span> Sistema iniciado...</div>
+            <div class="controls-area">
+                <div class="btn-group">
+                    <button class="btn btn-success" id="btn-connect" onclick="toggleConnection(true)">● Conectar</button>
+                    <button class="btn btn-danger" id="btn-disconnect" onclick="toggleConnection(false)" disabled>■ Desconectar</button>
                 </div>
-
-                <div class="controls-area">
-                    <div class="btn-group">
-                        <button class="btn btn-primary" onclick="logAction('Comando: MOVER CINTA IZQUIERDA')">
-                            ◀ Izquierda
-                        </button>
-                        <button class="btn btn-primary" onclick="logAction('Comando: MOVER CINTA DERECHA')">
-                            Derecha ▶
-                        </button>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-success" id="btn-connect" onclick="toggleConnection(true)">
-                            ● Conectar
-                        </button>
-                        <button class="btn btn-danger" id="btn-disconnect" onclick="toggleConnection(false)" disabled>
-                            ■ Desconectar
-                        </button>
-                    </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary">◀ Izquierda</button>
+                    <button class="btn btn-primary">Derecha ▶</button>
                 </div>
             </div>
         </section>
 
-        <!-- NUEVA VISTA ESTADÍSTICAS EN TIEMPO REAL -->
+
+        <!-- ==========================================
+             VISTA 4: ESTADÍSTICAS
+             ========================================== -->
         <section id="statistics-view" class="view-section">
             <div class="stats-container">
-                <!-- Gráfico de líneas - Clasificaciones por hora -->
-                <div class="chart-card">
-                    <h3 class="chart-title">📈 Clasificaciones por Hora (Últimas 24h)</h3>
-                    <div class="chart-wrapper">
-                        <canvas id="hourlyChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Gráfico de pastel - Distribución por material -->
-                <div class="chart-card">
-                    <h3 class="chart-title">🥧 Distribución por Tipo de Material</h3>
-                    <div class="chart-wrapper">
-                        <canvas id="materialChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Gráfico de barras - Eficiencia por categoría -->
                 <div class="chart-card full-width">
-                    <h3 class="chart-title">📊 Eficiencia de Clasificación por Categoría</h3>
-                    <div class="chart-wrapper">
-                        <canvas id="efficiencyChart"></canvas>
-                    </div>
+                    <div class="chart-title">📈 Clasificaciones por Hora (Últimas 24h)</div>
+                    <div class="chart-wrapper"><canvas id="hourlyChart"></canvas></div>
                 </div>
-
-                <!-- Métricas adicionales en tiempo real -->
-                <div class="realtime-metrics">
-                    <div class="metric-box">
-                        <div class="metric-icon">⚡</div>
-                        <div class="metric-info">
-                            <div class="metric-label">Tasa Actual</div>
-                            <div class="metric-value" id="rate-current">0/min</div>
-                        </div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-icon">🎯</div>
-                        <div class="metric-info">
-                            <div class="metric-label">Precisión IA</div>
-                            <div class="metric-value text-success" id="ai-accuracy">0%</div>
-                        </div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-icon">♻️</div>
-                        <div class="metric-info">
-                            <div class="metric-label">Total Reciclado</div>
-                            <div class="metric-value text-primary" id="total-recycled">0 kg</div>
-                        </div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-icon">⏱️</div>
-                        <div class="metric-info">
-                            <div class="metric-label">Tiempo Activo</div>
-                            <div class="metric-value" id="uptime">00:00:00</div>
-                        </div>
-                    </div>
+                <div class="chart-card">
+                    <div class="chart-title">🥧 Distribución por Tipo de Material</div>
+                    <div class="chart-wrapper"><canvas id="materialChart"></canvas></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-title">📊 Eficiencia de Clasificación por Categoría</div>
+                    <div class="chart-wrapper"><canvas id="efficiencyChart"></canvas></div>
                 </div>
             </div>
+            <div class="realtime-metrics">
+                <div class="metric-box"><div class="metric-icon">⚡</div><div class="metric-info"><div class="metric-label">Tasa Actual</div><div class="metric-value" id="rate-current">0/min</div></div></div>
+                <div class="metric-box"><div class="metric-icon">🎯</div><div class="metric-info"><div class="metric-label">Precisión IA</div><div class="metric-value" id="ai-accuracy">0%</div></div></div>
+                <div class="metric-box"><div class="metric-icon">♻️</div><div class="metric-info"><div class="metric-label">Total Reciclado</div><div class="metric-value" id="total-recycled">0 kg</div></div></div>
+                <div class="metric-box"><div class="metric-icon">⏱️</div><div class="metric-info"><div class="metric-label">Tiempo Activo</div><div class="metric-value" id="uptime">00:00:00</div></div></div>
+            </div>
         </section>
-
     </main>
 
+<!--ddada -->
+
+    <!-- Enlace a archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
